@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../Controller/video_controller.dart';
 import 'Import Past link.dart';
+import 'user_management_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -184,11 +185,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   Get.toNamed('/archive');
                 },
               ),
-               ListTile(
-                leading: const Icon(Icons.person),
-                title: const Text('User Management'),
-                onTap: () => Get.back(),
-              ),
+              ListTile(
+  leading: const Icon(Icons.person),
+  title: const Text('User Management'),
+  onTap: () {
+    Get.back(); // Close drawer
+    Get.to(() => UserManagementScreen()); // Navigate to User Management
+  },
+),
+
              ListTile(
   leading: const Icon(Icons.link),
   title: const Text('Import Past Link'),
