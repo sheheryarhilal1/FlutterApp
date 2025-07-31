@@ -176,6 +176,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () => Get.back(),
               ),
               ListTile(
+                leading: const Icon(Icons.settings),
+                title: const Text('Setting'),
+                onTap: () {
+                  Get.back();
+                  Get.toNamed('/archive');
+                },
+              ),
+               ListTile(
+                leading: const Icon(Icons.person),
+                title: const Text('User Management'),
+                onTap: () => Get.back(),
+              ),
+              ListTile(
+                leading: const Icon(Icons.link),
+                title: const Text('Past Link'),
+                onTap: () => Get.back(),
+              ),
+              ListTile(
                 leading: const Icon(Icons.archive),
                 title: const Text('Archive'),
                 onTap: () {
@@ -194,6 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
+        
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
           child: Center(
