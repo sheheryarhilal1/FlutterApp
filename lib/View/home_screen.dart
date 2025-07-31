@@ -177,14 +177,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 title: const Text('Home'),
                 onTap: () => Get.back(),
               ),
-              ListTile(
-                leading: const Icon(Icons.settings),
-                title: const Text('Setting'),
-                onTap: () {
-                  Get.back();
-                  Get.toNamed('/archive');
-                },
-              ),
+              // ListTile(
+              //   leading: const Icon(Icons.settings),
+              //   title: const Text('Setting'),
+              //   onTap: () {
+              //     Get.back();
+              //     Get.toNamed('/archive');
+              //   },
+              // ),
               ListTile(
   leading: const Icon(Icons.person),
   title: const Text('User Management'),
