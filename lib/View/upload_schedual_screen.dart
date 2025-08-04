@@ -228,36 +228,36 @@ class _UploadScheduleScreenState extends State<UploadScheduleScreen> {
                           itemCount: controller.archiveVideos.length,
                           itemBuilder: (context, index) {
                             final video = controller.archiveVideos[index];
-                            return Card(
-  color:const  Color.fromARGB(255, 23, 86, 121), // Set background color here
-  margin: const EdgeInsets.symmetric(vertical: 8),
-  elevation: 3,
-  child: ListTile(
-    title: Text(
-      video.title,
-      style: GoogleFonts.cinzel(fontWeight: FontWeight.bold,color: Colors.white),
-    ),
-    subtitle: Text(
-  'Date: ${video.dateSent.toLocal().toString().split(' ')[0]}\n'
-  'URL: ${video.url}\n${video.description ?? ''}',
-  style: const TextStyle(color: Colors.white),
-),
+//                             return Card(
+//   color:const  Color.fromARGB(255, 23, 86, 121), // Set background color here
+//   margin: const EdgeInsets.symmetric(vertical: 8),
+//   elevation: 3,
+//   child: ListTile(
+//     title: Text(
+//       video.title,
+//       style: GoogleFonts.cinzel(fontWeight: FontWeight.bold,color: Colors.white),
+//     ),
+//     subtitle: Text(
+//   'Date: ${video.dateSent.toLocal().toString().split(' ')[0]}\n'
+//   'URL: ${video.url}\n${video.description ?? ''}',
+//   style: const TextStyle(color: Colors.white),
+// ),
 
-    trailing: Wrap(
-      spacing: 8,
-      children: [
-        IconButton(
-          icon: const Icon(Icons.edit, color: Colors.white),
-          onPressed: () => _editVideo(index),
-        ),
-        IconButton(
-          icon: const Icon(Icons.delete, color: Colors.white),
-          onPressed: () => _deleteVideo(index),
-        ),
-      ],
-    ),
-  ),
-);
+//     trailing: Wrap(
+//       spacing: 8,
+//       children: [
+//         IconButton(
+//           icon: const Icon(Icons.edit, color: Colors.white),
+//           onPressed: () => _editVideo(index),
+//         ),
+//         IconButton(
+//           icon: const Icon(Icons.delete, color: Colors.white),
+//           onPressed: () => _deleteVideo(index),
+//         ),
+//       ],
+//     ),
+//   ),
+// );
 
                           },
                         )),
@@ -291,5 +291,4 @@ class _UploadScheduleScreenState extends State<UploadScheduleScreen> {
     ),
   );
 }
-
 }

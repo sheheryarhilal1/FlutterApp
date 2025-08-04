@@ -205,7 +205,7 @@ onPressed: () => Navigator.pushNamed(context, '/archive'),
   title: const Text('Import Past Link'),
   onTap: () {
     Get.back(); // Close the drawer
-    Get.to(() => ImportPastLinksScreen()); // Navigate to the screen
+    Get.to(() => PastVideosScreen()); // Navigate to the screen
   },
 ),
  ListTile(
