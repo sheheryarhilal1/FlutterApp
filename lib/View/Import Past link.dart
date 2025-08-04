@@ -54,9 +54,9 @@ class _ImportPastLinksScreenState extends State<ImportPastLinksScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown.shade100,
+      backgroundColor:  Color.fromARGB(255, 238, 108, 82),
       appBar: AppBar(
-        backgroundColor: Colors.brown.shade700,
+        backgroundColor:const  Color.fromARGB(255, 23, 86, 121) ,
         title: const Text("Import Past Links", style: TextStyle(color: Colors.white)),
         iconTheme: const IconThemeData(color: Colors.white),
       ),
@@ -77,7 +77,7 @@ class _ImportPastLinksScreenState extends State<ImportPastLinksScreen> {
                 style: const TextStyle(color: Colors.white),
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.brown.shade700,
+                backgroundColor: const  Color.fromARGB(255, 23, 86, 121) ,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               ),
@@ -93,7 +93,7 @@ class _ImportPastLinksScreenState extends State<ImportPastLinksScreen> {
                 icon: const Icon(Icons.save, color: Colors.white),
                 label: const Text("Import Video", style: TextStyle(color: Colors.white)),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.brown.shade700,
+                  backgroundColor: const  Color.fromARGB(255, 23, 86, 121) ,
                   padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                 ),
@@ -114,7 +114,7 @@ class _ImportPastLinksScreenState extends State<ImportPastLinksScreen> {
         labelText: isRequired ? "$label *" : label,
         labelStyle: const TextStyle(color: Colors.white),
         filled: true,
-        fillColor: Colors.brown.shade600,
+        fillColor: const  Color.fromARGB(255, 23, 86, 121) ,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.white),

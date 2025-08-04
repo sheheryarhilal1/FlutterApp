@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+// import 'package:get/get.dart';
 
 class User {
   final String email;
@@ -24,10 +24,10 @@ class UserManagementScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE0C097),
+      backgroundColor:  Color.fromARGB(255, 238, 108, 82),
       appBar: AppBar(
         title: const Text('User Management', style: TextStyle(color: Colors.white)),
-        backgroundColor: const Color(0xFF6D4C41),
+        backgroundColor: const  Color.fromARGB(255, 23, 86, 121) ,
         iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: ListView.builder(
@@ -39,13 +39,13 @@ class UserManagementScreen extends StatelessWidget {
             margin: const EdgeInsets.only(bottom: 12),
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: const Color(0xFF6D4C41),
+              color: const  Color.fromARGB(255, 23, 86, 121) ,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Icon(Icons.person, color: Colors.white70),
+                const Icon(Icons.person, color: Colors.white),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Column(
@@ -62,14 +62,14 @@ class UserManagementScreen extends StatelessWidget {
                           Text(
                             user.optedIn ? 'Opted In' : 'Unsubscribed',
                             style: TextStyle(
-                              color: user.optedIn ? Colors.greenAccent : Colors.redAccent,
+                              color: user.optedIn ? Colors.green : Colors.red,
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                           Text(
                             'Status: ${user.notificationStatus}',
-                            style: const TextStyle(color: Colors.grey, fontSize: 14),
+                            style: const TextStyle(color: Colors.white, fontSize: 14),
                           ),
                         ],
                       ),

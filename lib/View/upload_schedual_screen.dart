@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../Controller/video_controller.dart';
 import '../Model/video_model.dart';
 
@@ -69,7 +68,7 @@ class _UploadScheduleScreenState extends State<UploadScheduleScreen> {
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
-        backgroundColor: const Color(0xFFFFF8E1),
+        backgroundColor:Color.fromARGB(255, 238, 108, 82) ,
         title: Text('Edit Video', style: GoogleFonts.cinzel(fontWeight: FontWeight.bold)),
         content: SingleChildScrollView(
           child: Column(
@@ -105,7 +104,7 @@ class _UploadScheduleScreenState extends State<UploadScheduleScreen> {
                   style: const TextStyle(color: Colors.white),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.brown.shade700,
+                  backgroundColor: const  Color.fromARGB(255, 23, 86, 121) ,
                 ),
               ),
             ],
@@ -118,7 +117,7 @@ class _UploadScheduleScreenState extends State<UploadScheduleScreen> {
           ),
           ElevatedButton(
             onPressed: () {
-              if (tempTitle.text.isNotEmpty && tempUrl.text.isNotEmpty && tempDate != null) {
+              if (tempTitle.text.isNotEmpty && tempUrl.text.isNotEmpty) {
                 controller.archiveVideos[index] = VideoModel(
                   title: tempTitle.text,
                   url: tempUrl.text,
@@ -142,20 +141,17 @@ class _UploadScheduleScreenState extends State<UploadScheduleScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color(0xFFF3E5AB), Color(0xFFE0C097)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
+      decoration:const BoxDecoration(
+  color: Color.fromARGB(255, 253, 107, 78), // Replace with your desired solid color
+),
+
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          backgroundColor: const Color(0xFF6D4C41),
+          backgroundColor:const  Color.fromARGB(255, 23, 86, 121) ,
           title: Text(
-            'Upload or Schedule Video',
-            style: GoogleFonts.cinzel(fontSize: 22, fontWeight: FontWeight.bold),
+            'Upload  Schedule Video',
+            style: GoogleFonts.cinzel(fontSize: 22, fontWeight: FontWeight.bold,color: Colors.white),
           ),
           centerTitle: true,
         ),
@@ -172,7 +168,7 @@ class _UploadScheduleScreenState extends State<UploadScheduleScreen> {
                     style: GoogleFonts.cinzel(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Colors.brown.shade900,
+                      color: Colors.white,
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -180,7 +176,7 @@ class _UploadScheduleScreenState extends State<UploadScheduleScreen> {
                   const SizedBox(height: 16),
                   _buildTextField("Title", titleController),
                   const SizedBox(height: 16),
-                  _buildTextField("Quote/Description (Optional)", descriptionController, maxLines: 2),
+                  _buildTextField("Quote/Description (Optional)", descriptionController, maxLines: 2,),
                   const SizedBox(height: 16),
                   Row(
                     children: [
@@ -194,7 +190,7 @@ class _UploadScheduleScreenState extends State<UploadScheduleScreen> {
                           style: const TextStyle(color: Colors.white),
                         ),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.brown.shade700,
+                          backgroundColor: const  Color.fromARGB(255, 23, 86, 121) ,
                           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                         ),
@@ -204,7 +200,7 @@ class _UploadScheduleScreenState extends State<UploadScheduleScreen> {
                         onPressed: _submit,
                         child: const Text('Upload'),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.brown.shade700,
+                          backgroundColor: const  Color.fromARGB(255, 23, 86, 121) ,
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -213,14 +209,14 @@ class _UploadScheduleScreenState extends State<UploadScheduleScreen> {
                     ],
                   ),
                   const SizedBox(height: 30),
-                  Divider(color: Colors.brown.shade300, thickness: 1.2),
+                  Divider(color: const  Color.fromARGB(255, 23, 86, 121) , thickness: 1.2),
                   const SizedBox(height: 10),
                   Text(
                     'Past Videos',
                     style: GoogleFonts.cinzel(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.brown.shade900,
+                      color: Colors.white,
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -233,29 +229,36 @@ class _UploadScheduleScreenState extends State<UploadScheduleScreen> {
                           itemBuilder: (context, index) {
                             final video = controller.archiveVideos[index];
                             return Card(
-                              margin: const EdgeInsets.symmetric(vertical: 8),
-                              elevation: 3,
-                              child: ListTile(
-                                title: Text(video.title, style: GoogleFonts.cinzel(fontWeight: FontWeight.bold)),
-                                subtitle: Text(
-                                  'Date: ${video.dateSent.toLocal().toString().split(' ')[0]}\n'
-                                  'URL: ${video.url}\n${video.description ?? ''}',
-                                ),
-                                trailing: Wrap(
-                                  spacing: 8,
-                                  children: [
-                                    IconButton(
-                                      icon: const Icon(Icons.edit, color: Color(0xFF6D4C41)),
-                                      onPressed: () => _editVideo(index),
-                                    ),
-                                    IconButton(
-                                      icon: const Icon(Icons.delete, color:Color(0xFFE0C097)),
-                                      onPressed: () => _deleteVideo(index),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
+  color:const  Color.fromARGB(255, 23, 86, 121), // Set background color here
+  margin: const EdgeInsets.symmetric(vertical: 8),
+  elevation: 3,
+  child: ListTile(
+    title: Text(
+      video.title,
+      style: GoogleFonts.cinzel(fontWeight: FontWeight.bold,color: Colors.white),
+    ),
+    subtitle: Text(
+  'Date: ${video.dateSent.toLocal().toString().split(' ')[0]}\n'
+  'URL: ${video.url}\n${video.description ?? ''}',
+  style: const TextStyle(color: Colors.white),
+),
+
+    trailing: Wrap(
+      spacing: 8,
+      children: [
+        IconButton(
+          icon: const Icon(Icons.edit, color: Colors.white),
+          onPressed: () => _editVideo(index),
+        ),
+        IconButton(
+          icon: const Icon(Icons.delete, color: Colors.white),
+          onPressed: () => _deleteVideo(index),
+        ),
+      ],
+    ),
+  ),
+);
+
                           },
                         )),
                 ],
@@ -267,17 +270,26 @@ class _UploadScheduleScreenState extends State<UploadScheduleScreen> {
     );
   }
 
-  Widget _buildTextField(String label, TextEditingController controller, {int maxLines = 1}) {
-    return TextField(
-      controller: controller,
-      maxLines: maxLines,
-      decoration: InputDecoration(
-        labelText: label,
-        filled: true,
-        fillColor: Colors.white,
-        labelStyle: GoogleFonts.cinzel(),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+ Widget _buildTextField(String label, TextEditingController controller, {int maxLines = 1}) {
+  return TextField(
+    controller: controller,
+    maxLines: maxLines,
+    style: const TextStyle(color: Colors.white), // Text entered will be white
+    decoration: InputDecoration(
+      labelText: label,
+      labelStyle: GoogleFonts.cinzel(color: Colors.white), // Label text white
+      filled: true,
+      fillColor: const Color.fromARGB(255, 23, 86, 121), // Background color of text field
+      enabledBorder: OutlineInputBorder(
+        borderSide: const BorderSide(color: Colors.white),
+        borderRadius: BorderRadius.circular(12),
       ),
-    );
-  }
+      focusedBorder: OutlineInputBorder(
+        borderSide: const BorderSide(color: Colors.white, width: 1.5),
+        borderRadius: BorderRadius.circular(12),
+      ),
+    ),
+  );
+}
+
 }

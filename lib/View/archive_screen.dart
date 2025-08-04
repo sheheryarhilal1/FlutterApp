@@ -13,22 +13,19 @@ class ArchiveScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Past Videos',
-          style: GoogleFonts.cinzel(fontSize: 22, fontWeight: FontWeight.bold),
+          style: GoogleFonts.cinzel(fontSize: 22, fontWeight: FontWeight.bold)
         ),
-        backgroundColor: const Color(0xFF6D4C41), // Antique dark brown
+    // Antique dark brown      
+        backgroundColor: const  Color.fromARGB(255, 23, 86, 121),
+
         centerTitle: true,
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color(0xFFF3E5AB),
-              Color(0xFFE0C097),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
+        decoration: const BoxDecoration(color: Color.fromARGB(255, 238, 108, 82),
+
+   // Use a single color here
+),
+
         child: Obx(() {
           final videos = controller.archiveVideos;
 
@@ -49,9 +46,9 @@ class ArchiveScreen extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(vertical: 10),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
-                  side: BorderSide(color: Colors.brown.shade700, width: 1),
+                  side: BorderSide(color: Colors.white, width: 4),
                 ),
-                color: Colors.brown.shade100.withOpacity(0.75),
+                color:   Color.fromARGB(255, 23, 86, 121),
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Column(
@@ -70,7 +67,7 @@ class ArchiveScreen extends StatelessWidget {
                         style: GoogleFonts.libreBaskerville(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: Colors.brown.shade900,
+                          color: Colors.white
                         ),
                       ),
                       const SizedBox(height: 6),
@@ -78,7 +75,7 @@ class ArchiveScreen extends StatelessWidget {
                         "Sent on: $formattedDate",
                         style: GoogleFonts.libreBaskerville(
                           fontSize: 14,
-                          color: Colors.brown.shade800,
+                          color: Colors.white,
                         ),
                       ),
                       const SizedBox(height: 10),
@@ -91,7 +88,7 @@ class ArchiveScreen extends StatelessWidget {
                           icon: const Icon(Icons.play_arrow),
                           label: const Text("Play"),
                           style: TextButton.styleFrom(
-                            foregroundColor: Colors.brown.shade900,
+                            foregroundColor: Colors.white,
                           ),
                         ),
                       ),

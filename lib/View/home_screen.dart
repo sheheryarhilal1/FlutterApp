@@ -13,6 +13,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final VideoController controller = Get.find();
+  // final VideoController controller = VideoController();
+
 
   late YoutubePlayerController ytController1;
   late YoutubePlayerController ytController2;
@@ -85,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
           style: GoogleFonts.cinzel(
             fontSize: isWide ? 20 : 18,
             fontWeight: FontWeight.bold,
-            color: Colors.brown.shade900,
+            color: Colors.white,
           ),
           textAlign: TextAlign.center,
         ),
@@ -95,17 +97,17 @@ class _HomeScreenState extends State<HomeScreen> {
           style: GoogleFonts.libreBaskerville(
             fontSize: isWide ? 16 : 14,
             fontWeight: FontWeight.w500,
-            color: Colors.brown.shade800,
+            color: Colors.white,
           ),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 20),
         ElevatedButton.icon(
-          onPressed: () => Get.toNamed('/archive'),
+onPressed: () => Navigator.pushNamed(context, '/archive'),
           icon: const Icon(Icons.archive_outlined),
           label: const Text("View Archive"),
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.brown.shade700,
+            backgroundColor: Color.fromARGB(255, 23, 86, 121),
             foregroundColor: Colors.white,
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
             shape: RoundedRectangleBorder(
@@ -137,21 +139,24 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor:  Color.fromARGB(255, 238, 108, 82),
+
         appBar: AppBar(
           title: Text(
             'Saturday Vibes',
             style: GoogleFonts.cinzel(
               fontSize: 22,
               fontWeight: FontWeight.bold,
+              color: Colors.white
             ),
           ),
           centerTitle: true,
-          backgroundColor: const Color(0xFF6D4C41),
+          backgroundColor: const  Color.fromARGB(255, 23, 86, 121),
+
           elevation: 4,
           leading: Builder(
             builder: (context) => IconButton(
-              icon: const Icon(Icons.menu),
+              icon: const Icon(Icons.menu ,color: Colors.white,),
               onPressed: () => Scaffold.of(context).openDrawer(),
             ),
           ),
@@ -160,18 +165,19 @@ class _HomeScreenState extends State<HomeScreen> {
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.brown.shade700,
-                ),
-                child: Text(
-                  'Menu',
-                  style: GoogleFonts.cinzel(
-                    color: Colors.white,
-                    fontSize: 24,
-                  ),
-                ),
-              ),
+             DrawerHeader(
+  decoration: BoxDecoration(
+    color: Color.fromARGB(255, 23, 86, 121), // New background color
+  ),
+  child: Text(
+    'Menu',
+    style: GoogleFonts.cinzel(
+      color: Colors.white,
+      fontSize: 24,
+    ),
+  ),
+),
+
               ListTile(
                 leading: const Icon(Icons.home),
                 title: const Text('Home'),

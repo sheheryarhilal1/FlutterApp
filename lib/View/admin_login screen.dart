@@ -46,13 +46,10 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color(0xFFF3E5AB), Color(0xFFE0C097)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
+      decoration:  const BoxDecoration(color: Color.fromARGB(255, 238, 108, 82),
+   // Use a single color here
+),
+
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
@@ -60,14 +57,14 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
             'Admin Login',
             style: GoogleFonts.cinzel(
               fontSize: 24,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w700,color: Colors.white,
               letterSpacing: 1.2,
             ),
           ),
           centerTitle: true,
-          backgroundColor: const Color(0xFF6D4C41),
+          backgroundColor:const  Color.fromARGB(255, 23, 86, 121) ,
           elevation: 4,
-          shadowColor: Colors.brown.shade900,
+          shadowColor: Colors.white,
         ),
         body: SafeArea(
           child: SingleChildScrollView(
@@ -79,11 +76,11 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                   child: Container(
                     padding: const EdgeInsets.all(24),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.3),
+                      // color: Colors.white.withOpacity(0.3),
                       borderRadius: BorderRadius.circular(24),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.brown.shade200,
+                          color:Colors.transparent,
                           blurRadius: 15,
                           offset: const Offset(0, 8),
                         ),
@@ -99,7 +96,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                           style: GoogleFonts.cinzel(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
-                            color: Colors.brown.shade900,
+                            color: Colors.white,
                             letterSpacing: 1,
                           ),
                         ),
@@ -109,12 +106,12 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                           style: GoogleFonts.cinzel(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
-                            color: Colors.brown.shade700,
+                            color: Colors.white,
                             letterSpacing: 0.5,
                           ),
                         ),
                         const SizedBox(height: 8),
-                        Divider(color: Colors.brown.shade300),
+                        Divider(color: const  Color.fromARGB(255, 23, 86, 121) ),
                         const SizedBox(height: 10),
                         TextField(
                           controller: emailController,
@@ -140,7 +137,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                                 _isPasswordVisible
                                     ? Icons.visibility
                                     : Icons.visibility_off,
-                                color: Colors.brown.shade700,
+                                color:const  Color.fromARGB(255, 23, 86, 121) ,
                               ),
                               onPressed: () {
                                 setState(() {
@@ -159,7 +156,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                         ElevatedButton(
                           onPressed: handleLogin,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.brown.shade700,
+                            backgroundColor: const  Color.fromARGB(255, 23, 86, 121) ,
                             elevation: 3,
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 40, vertical: 16),
@@ -181,7 +178,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                         Text(
                           "Only for authorized admins",
                           style: TextStyle(
-                            color: Colors.brown.shade800,
+                            color: const  Color.fromARGB(255, 23, 86, 121) ,
                             fontSize: 12,
                           ),
                         )
